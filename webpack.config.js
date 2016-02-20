@@ -35,5 +35,9 @@ module.exports =  {
   },
   resolve: {
     modulesDirectories: ['node_modules']
-  }
+  },
+  externals: {
+    jQuery: 'jQuery',
+    foundation: 'Foundation'
+  },
 }

@@ -1,3 +1,12 @@
+// jQuery
+var $ = require('jquery');
+global.jQuery = $;
+
+// Foundation
+require('../node_modules/foundation-sites/dist/foundation.js');
+
+export default Foundation;
+
 import scss from './app.scss'
 
 import Vue from 'vue'
@@ -8,10 +17,18 @@ import App from './components/App.vue'
 import Home from './components/Home.vue'
 import About from './components/About.vue'
 import Quote from './components/Quote.vue'
+import DisplayForm from './components/DisplayForm.vue'
+import PoliticalRidings from './components/PoliticalRidings.vue'
 
 // Install plugins
 Vue.use(Router)
 Vue.use(Resource)
+
+Vue.transition('fade', {
+  enter: function () {},
+  leave: function () {}
+})
+var fadeTransition = Vue.transition('fade')
 
 // Set up a new router
 var router = new Router()
@@ -29,6 +46,14 @@ router.map({
   '/quote':{
     name: 'quote',
     component: Quote
+  },
+  '/displayform':{
+    name: 'displayform',
+    component: DisplayForm
+  },
+  '/political-ridings':{
+    name: 'politicalridings',
+    component: PoliticalRidings
   }
 })
 
